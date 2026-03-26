@@ -1,0 +1,21 @@
+/* i/p: "hi-hello-"
+   o/p:2
+*/ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+	    String[] arr=str.split("_");
+	    int count=0;
+	    for(String c:arr){
+	        count++;
+	    }
+        System.out.print(count);
+	}
+}

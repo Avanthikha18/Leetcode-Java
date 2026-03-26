@@ -1,0 +1,30 @@
+/*
+i/p: programming
+o/p: progamin
+ */
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		for(int i=0;i<str.length();i++){
+		    Boolean flag=false;
+		    char ch=str.charAt(i);
+		    for(int k=0;k<i;k++){
+		        if(str.charAt(k)==ch){
+		          flag=true;
+		          break;
+		        }
+		    }
+		        if(flag)continue;
+		    System.out.print(str.charAt(i));
+		
+}
+
+}
+}

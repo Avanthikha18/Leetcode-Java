@@ -1,0 +1,114 @@
+//i/p: hi_____hello_j
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+	    int[] fre=new int[256];
+	    int count=0;
+	    for(int i=0;i<str.length();i++){
+	        char ch=str.charAt(i);
+	        fre[ch]++;
+	    }
+	    for(int i=0;i<256;i++){
+	        if(fre[i]!=0){
+	            System.out.println((char)i+":"+fre[i]);
+	        }
+	    }
+        System.out.print(count);
+	}
+}
+/*o/p:
+_:6
+e:1
+h:2
+i:1
+j:1
+l:2
+o:1
+0
+*/
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+	    int[] fre=new int[256];
+	    for(char c: str.toCharArray()){
+	        fre[c]++;
+	    }
+	    
+	    for(char c: str.toCharArray()){
+	        if(fre[c]!=0)
+	        System.out.println(c+":"+fre[c]);
+	    }
+	   
+	}
+}
+/*o/p:
+      h:2
+i:1
+_:6
+_:6
+_:6
+_:6
+_:6
+h:2
+e:1
+l:2
+l:2
+o:1
+_:6
+j:1
+*/
+// without using inbuilt function
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		int[] fre=new int[256];
+	    for(int i=0;i<str.length();i++){
+	    boolean flag=false;
+	        for(int j=0;j<i;j++){
+	            if(str.charAt(i)==str.charAt(j)){
+	                flag=true;
+	                break;
+	            }
+	        }
+	    
+	   if(flag)
+	    continue;
+	   int count=1;
+	   for(int k=i+1;k<str.length();k++){
+	       if(str.charAt(k)==str.charAt(i))
+	       count++;
+	   }
+	    System.out.println(str.charAt(i)+":"+count);
+	    }
+	}
+}
+/*
+ h:2
+i:1
+_:6
+e:1
+l:2
+o:1
+j:1
+*/
