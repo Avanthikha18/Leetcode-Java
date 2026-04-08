@@ -41,6 +41,9 @@ class Puppy extends Cat{
 }
 public class Main{
     public static void main(String[] args){
+       Cat c=new Cat();
+        c.eat();
+        c.sound();
        Puppy p=new Puppy();
         p.eat();
         p.sound();

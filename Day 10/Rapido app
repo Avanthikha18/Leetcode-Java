@@ -69,7 +69,7 @@ public class RideBookingApp{
     public static void main(String[] args) {
         Ride R1= new Ride("Rahul","Anna Nagar","Guindy");
         R1.showDetails();
-        R1.cancelRide();
+        R1.completeRide();
         R1.cancelRide();
         R1.showDetails();
         List<String> stops=new ArrayList<>();

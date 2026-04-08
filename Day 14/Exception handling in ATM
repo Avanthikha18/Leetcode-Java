@@ -1,0 +1,77 @@
+class Invalidpinexception extends Exception{
+      Invalidpinexception(String str){
+        super(str);
+      }
+}
+class Insufficientbalanceexception extends Exception{
+    Insufficientbalanceexception(String str){
+        super(str);
+    }
+}
+
+
+
+
+class ATM{
+    private int pin=1234;
+    private balance=5000;
+    public static void pinvalidate(int p) throws Invalidpinexception{
+      if(p!=pin){
+        throw new Invalidpinexception("Invalispinexception");
+      }
+      System.out.println("Valid pin");
+    }
+    public static void deposit(int a){
+        balance=balance+a;
+        System.out.println("Deposit successfull");
+    }
+    public static void checkbalance {
+         System.out.println("Available balance: "+balance);
+    }
+    public static void withdraw(int b)throws Insufficientbalanceexception{
+        if(b>balance){
+            throw new Insufficientbalanceexception("Insufficentbalanceexception");
+        }
+        System.out.println("Withdraw successful");
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        ATM u1=new ATM();
+        Scanner sc=new Scanner(System.in);
+        try{
+            System.out.println("Enter pin: ");
+            int p1=sc.nextInt();
+            u1.pinvalidate(p1);
+            System.out.println("Enter your choice: ");
+            int choice=sc.nextInt();
+            switch(choice){
+                case 1:
+                  System.out.println("Enter amount: ")
+                  int amt=sc.nextInt();
+                  u1.deposit();
+                  break;
+               case 2:
+                  u1.checkbalance();
+                  break;
+                case 3:
+                   System.out.println("Enter withdrawal amount: ")
+                   int withamt=sc.nextInt();
+                   u1.withdraw();
+                   break;
+                default:
+                  System.out.println("Invalid choice");
+            }
+        }
+        catch(Invalidpinexception e){
+            System.out.println(e.getMessage());
+        }
+        catch(Insufficientbalanceexception e){
+            System.out.println(e.getMessage());
+        }
+        finally{
+            System.out.println("Thankyou!visitagain!");
+        }
+    }
+}
